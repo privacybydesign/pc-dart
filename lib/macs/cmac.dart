@@ -182,6 +182,8 @@ class CMac extends BaseMac {
 
   @override
   void init(covariant KeyParameter keyParams) {
+    print('CMac.init: $keyParams');
+    print('Block size: ${_cipher.blockSize}');
     final zeroIV = Uint8List(_cipher.blockSize);
     _params = ParametersWithIV(keyParams, zeroIV);
 
